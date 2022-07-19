@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Card from "./components/Card";
+import Header from "./Header";
 
 function App() {
 
@@ -41,9 +42,12 @@ function App() {
 
   return (
     <div>
+      <Header />
       {leftCard && rightCard && (leftCard.suit === rightCard.suit && (<div>Suit perfect</div>))}
       {leftCard && rightCard && (leftCard.value === rightCard.value && (<div>Value perfect</div>))}
+      <div className="leftcard">
       <Card object={leftCard} name="left" />
+      </div>
       <Card object={rightCard} name="right" />
 
       {!finish && <button onClick={() => shuffle()}>Draw Card</button>}
