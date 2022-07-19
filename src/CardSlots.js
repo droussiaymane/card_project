@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import NewCard from "./NewCard";
 import DeckOfCards from "./DeckOfCards";
+import newCardss from "./newCardss";
 
 
 const CardSlots = () => {
@@ -8,10 +9,10 @@ const CardSlots = () => {
     const [currentCards, setCurrentCards] = useState([undefined, undefined])
     const [newestCard, setNewestCard] = useState()
 
-    // if (newestCard !== currentCards[0]) {
-    //     setCurrentCards([newestCard, currentCards[0]])
-    //     console.log("meffww");
-    // }
+    if (newestCard !== currentCards[0]) {
+        setCurrentCards([newestCard, currentCards[0]])
+        console.log("meffww");
+    }
 
     return (
         <div className="cardSlots">
@@ -19,10 +20,10 @@ const CardSlots = () => {
             {deckId && <NewCard deckId={deckId} setNewestCard={setNewestCard} />}
 
             {/* {newestCard && <img src={newestCard.image} ></img>} */}
-            {currentCards[0] && <img src={currentCards[0].image} />}
+            {currentCards[1] && <img src={currentCards[1].image} />}
             {currentCards[0] && <img src={currentCards[0].image} />}
 
-            <button>Click Here</button>
+            <button onClick={() => newCardss(deckId, setNewestCard)}>Click Here</button>
         </div>
     );
 }

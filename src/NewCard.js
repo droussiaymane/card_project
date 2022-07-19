@@ -18,7 +18,7 @@ const NewCard = ({ deckId, setNewestCard }) => {
             .catch(err => console.log(err))
 
     }, [])
-
+    console.log(132414);
     return (
         <></>
     );
