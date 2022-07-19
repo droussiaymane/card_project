@@ -22,9 +22,6 @@ const newCardss = (deckId, setNewestCard) => {
 
     console.log(888);
 
-    return (
-        <></>
-    );
 }
 
 export default newCardss;
