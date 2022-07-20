@@ -10,9 +10,12 @@ export const SuitValueOutput = ({ leftCard, rightCard }) => {
                 console.log(rightCard.suit);
                 setMatchedValueSuit("SNAP! Suits")
             }
-            if (leftCard.value === rightCard.value) {
+            else if (leftCard.value === rightCard.value) {
                 console.log(rightCard.value);
                 setMatchedValueSuit("SNAP! Value")
+            }
+            else{
+                setMatchedValueSuit(null)  
             }
         }
     }, [leftCard, rightCard])

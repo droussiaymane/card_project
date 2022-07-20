@@ -3,6 +3,8 @@ import Card from "./components/Card";
 import Header from "./Header";
 import { SuitValueOutput } from "./SuitValueOutput";
 
+import isValueMatches from "./utils/isValueMatches";
+import isSuitMatches from './utils/isSuitMatches'
 function App() {
 
   const [deckId, setDeckId] = useState("")
@@ -31,13 +33,17 @@ function App() {
       }
     }).catch(err => console.log(err))
 
-    if (leftCard !== null && rightCard !== null && leftCard.value === rightCard.value) {
+    if (isValueMatches(leftCard,rightCard)) {
+      console.log("value")
       setValueCount((valueCount) => valueCount + 1)
     }
-    if (leftCard !== null && rightCard !== null && leftCard.suit === rightCard.suit) {
+    if (isSuitMatches(leftCard,rightCard)) {
+      console.log("suit")
       setSuitCount((suitCount) => suitCount + 1)
-      console.log(12341423);
+     
     }
+
+   
 
   }
 
